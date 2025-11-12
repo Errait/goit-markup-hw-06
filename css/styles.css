@@ -650,6 +650,9 @@ form, input {
     fill: #4d5ae5;
 }
 
+.textarea-label-container {
+    margin-bottom: 16px;
+}
 .modal-label-textarea {
     font-size: 12px;
     line-height: 1.17;
