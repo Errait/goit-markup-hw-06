@@ -105,9 +105,10 @@ input {
     text-transform: uppercase;
     text-decoration: none;
     color: var(--primary-brand);
-
+}
+.header-logo {
     display: block;
-    padding: 16px 0;    
+    padding: 16px 0;
 }
 .logo-span {
     color:var(--dark);
@@ -161,9 +162,6 @@ input {
         left: 0;
         background: var(--pressed-state);
     }
-    .nav-ref:hover, .nav-ref:focus {
-        color: var(--pressed-state);
-    }
     .current-nav-ref {
         color: var(--pressed-state);
     }
@@ -191,13 +189,15 @@ input {
         letter-spacing: 0.04em;
         transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .contacts-ref:hover, .contacts-ref:focus {
-        color: var(--pressed-state);
-    }
+    
 }
 @media screen and (min-width: 1158px) {
     .header-logo {
         margin-right: 76px;
+    }
+    .nav-ref:hover, 
+    .nav-ref:focus {
+        color: var(--pressed-state);
     }
     .contacts-list {
         align-items: center;
@@ -209,6 +209,10 @@ input {
         line-height: 1.5;
         font-size: 16px;
         letter-spacing: 0.02em;
+    }
+    .contacts-ref:hover, 
+    .contacts-ref:focus {
+        color: var(--pressed-state);
     }
 }
 
@@ -263,15 +267,6 @@ input {
     fill: var(--dark);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);    
 }
-.mobile-exit-button:hover, 
-.mobile-exit-button:focus {
-    background-color: var(--pressed-state);
-    border: none;
-}
-.mobile-exit-button:hover .mobile-exit-button, 
-.mobile-exit-button:focus .mobile-exit-button {
-    fill: var(--white-background);
-}
 .mobile-nav {
     margin-bottom: auto;
 }
@@ -289,8 +284,7 @@ input {
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.mob-nav-ref:hover, 
-.mob-nav-ref:focus {
+.mob-nav-ref:active {
     color: var(--pressed-state);
 }
 .mobile-contacts-list {
@@ -308,9 +302,8 @@ input {
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.mobile-contacts-ref:hover, 
-.mobile-contacts-ref:focus {
-    color: var(--pressed-state);
+.mobile-contacts-ref:active {
+    color: var(--primary-brand);
 }
 .mobile-social {
     display: flex;
@@ -338,7 +331,7 @@ input {
     background-color: #2e2f42;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), 
     rgba(46, 47, 66, 0.7)), 
-    url(../images/img-name.jpg);
+    url(../images/hero-img-mob.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -357,6 +350,8 @@ input {
     line-height: 1.11;
     text-align: center;
 
+    max-width: 210px;
+
     margin: 0 52px 72px;
 }
 .hero-button {
@@ -374,11 +369,19 @@ input {
 
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.hero-button:hover, 
-.hero-button:focus {
-    background-color: var(--pressed-state);
+@media (min-resolution: 192dpi) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), 
+        rgba(46, 47, 66, 0.7)), 
+        url(../images/hero-img-mob@2x.jpg);
+    }
 }
 @media screen and (min-width: 768px) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), 
+        rgba(46, 47, 66, 0.7)), 
+        url(../images/hero-img-tab.jpg);
+    }
     .hero .container {
         padding: 112px 0;
     }
@@ -386,10 +389,21 @@ input {
         font-size: 56px;
         line-height: 1.07;
         margin: 0 136px 36px;
+        max-width: 496px;
+    }
+}
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), 
+        rgba(46, 47, 66, 0.7)), 
+        url(../images/hero-img-tab@2x.jpg);
     }
 }
 @media screen and (min-width: 1158px) {
     .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), 
+        rgba(46, 47, 66, 0.7)), 
+        url(../images/hero-img-desk.jpg);
         max-width: 1440px;
         margin: 0 auto;
     }
@@ -400,6 +414,17 @@ input {
         font-size: 56px;
         margin: 0 0 48px;
         max-width: 496px;
+    }
+    .hero-button:hover, 
+    .hero-button:focus {
+        background-color: var(--pressed-state);
+    }
+}
+@media screen and (min-width: 1158px) and (min-resolution: 192dpi) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), 
+        rgba(46, 47, 66, 0.7)), 
+        url(../images/hero-img-desk@2x.jpg);
     }
 }
 
@@ -563,10 +588,6 @@ input {
 .team-member-icon {
     fill: var(--light);
 }
-.team-member-link:hover, 
-.team-member-link:focus {
-    background-color: var(--pressed-state);
-}
 @media screen and (min-width: 768px) {
     .our-team .container {
         padding-left: 92px;
@@ -589,6 +610,10 @@ input {
     .team-card {
         width: calc((100% - 72px) / 4);
         max-width: 264px;
+    }
+    .team-member-link:hover, 
+    .team-member-link:focus {
+        background-color: var(--pressed-state);
     }
 }
 
@@ -697,14 +722,12 @@ input {
     flex-wrap: wrap;
     gap: 72px;
     justify-content: center;
-    align-items: center;
     padding-top: 96px;
     padding-bottom: 96px;
 }
 .footer-logo-text {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 .footer-logo {
     display: inline-block;
@@ -714,7 +737,6 @@ input {
 .footer-logo-span {
     color: var(--light);
 }
-
 .footer-social-title {
     font-weight: 500;
     text-align: center;
@@ -742,16 +764,8 @@ input {
     align-items: center;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.footer-social-link:hover, 
-.footer-social-link:focus {
-    background-color: var(--success);
-}
 .footer-social-icon {
     fill: var(--light);
-}
-
-.footer-subscribe {
-    width: 100%;
 }
 .subscribe-title {
     font-weight: 500;
@@ -816,10 +830,6 @@ input {
     fill: var(--light);
     margin-left: 16px;
 }
-.subscribe-form-button:hover, 
-.subscribe-form-button:focus {
-    background-color: var(--pressed-state);
-}
 @media screen and (min-width: 768px) {
     .footer .container {
         justify-content: flex-start;
@@ -829,8 +839,10 @@ input {
         column-gap: 24px;
     }
     .footer-logo-text {
-        
         max-width: 264px;
+    }
+    .footer-logo {
+        text-align: start;
     }
     .subscribe-title {
         margin-left: auto;
@@ -845,7 +857,25 @@ input {
     }
 }
 @media screen and (min-width: 1158px) {
-    
+    .footer .container {
+        justify-content: flex-start;
+        padding: 100px 15px;
+        gap: 0;
+    }
+    .footer-logo-text {
+        margin-right: 120px;
+    }
+    .footer-social {
+        margin-right: 80px;
+    }
+    .footer-social-link:hover, 
+    .footer-social-link:focus {
+        background-color: var(--success);
+    }
+    .subscribe-form-button:hover, 
+    .subscribe-form-button:focus {
+        background-color: var(--pressed-state);
+    }
 }
 
 .modal-overlay {
@@ -909,15 +939,6 @@ input {
     margin: auto;
     fill: var(--dark);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.modal-exit-button:hover, 
-.modal-exit-button:focus {
-    background-color: var(--pressed-state);
-    border: none;
-}
-.modal-exit-button:hover .exit-button-icon, 
-.modal-exit-button:focus .exit-button-icon {
-    fill: var(--white-background);
 }
 .modal-title {
     font-weight: 500;
@@ -1006,6 +1027,7 @@ input {
     color: var(--subtle-text);
 }
 .modal-checkbox-label-text {
+    display: block;
     min-width: 0;
 }
 .custom-checkbox {
@@ -1034,10 +1056,6 @@ input {
     color: #4d5ae5;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.checkbox-link:hover, .checkbox-link:focus {
-    color: var(--pressed-state);
-}
-
 .modal-submit-button {
     line-height: 1.5;
     letter-spacing: 0.04em;
@@ -1055,10 +1073,6 @@ input {
 
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-submit-button:hover, 
-.modal-submit-button:focus {
-    background-color: var(--pressed-state);
-}
 @media screen and (min-width: 768px) {
     .modal {
         min-width: 408px;
@@ -1066,5 +1080,20 @@ input {
     }
 }
 @media screen and (min-width: 1158px) {
-    
+    .modal-exit-button:hover, 
+    .modal-exit-button:focus {
+        background-color: var(--pressed-state);
+        border: none;
+    }
+    .modal-exit-button:hover .exit-button-icon, 
+    .modal-exit-button:focus .exit-button-icon {
+        fill: var(--white-background);
+    }
+    .checkbox-link:hover, .checkbox-link:focus {
+        color: var(--pressed-state);
+    }
+    .modal-submit-button:hover, 
+    .modal-submit-button:focus {
+        background-color: var(--pressed-state);
+    }
 }
